@@ -1,4 +1,3 @@
-import redis
 import json
 import os
 from typing import Any, Optional
@@ -9,9 +8,19 @@ from utils.logger import Logger
 
 logger = Logger.get_logger(__name__)
 
+try:
+    import redis
+except ImportError:
+    redis = None
+
 
 class RedisCacheProvider(CacheProvider):
     def __init__(self):
+        if redis is None:
+            raise ImportError(
+                "redis package is not installed. Install it with: pip install redis~=7.1.0"
+            )
+
         redis_host = os.getenv("REDIS_HOST", "localhost")
         redis_port = int(os.getenv("REDIS_PORT", 6379))
         redis_db = int(os.getenv("REDIS_DB", 0))

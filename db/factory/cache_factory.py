@@ -22,8 +22,8 @@ class CacheFactory:
             try:
                 CacheFactory._cache_instance = RedisCacheProvider()
                 logger.info("Using Redis cache")
-            except ConnectionError as e:
-                logger.error(f"Redis connection failed: {e}, using local cache")
+            except (ConnectionError, ImportError) as e:
+                logger.error(f"Redis unavailable: {e}, using local cache")
                 CacheFactory._cache_instance = LocalCacheProvider()
         else:
             CacheFactory._cache_instance = LocalCacheProvider()

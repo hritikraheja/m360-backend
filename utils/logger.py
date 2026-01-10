@@ -27,21 +27,27 @@ class Logger:
         )
         console_handler.setFormatter(console_formatter)
 
-        os.makedirs("logs", exist_ok=True)
-        file_handler = RotatingFileHandler(
-            "logs/quran_api.log",
-            maxBytes=SystemConfig.MAX_BYTES.value,
-            backupCount=5,
-        )
-        file_handler.setLevel(logging.DEBUG)
-        file_formatter = logging.Formatter(
-            "%(asctime)s - %(name)s - %(levelname)s "
-            "- [%(filename)s:%(lineno)d] - %(message)s"
-        )
-        file_handler.setFormatter(file_formatter)
-
         logger.addHandler(console_handler)
-        logger.addHandler(file_handler)
+
+        # Try to add file handler, but don't fail if we can't create logs directory
+        try:
+            logs_dir = os.getenv("LOGS_DIR", "logs")
+            os.makedirs(logs_dir, exist_ok=True)
+            file_handler = RotatingFileHandler(
+                os.path.join(logs_dir, "quran_api.log"),
+                maxBytes=SystemConfig.MAX_BYTES.value,
+                backupCount=5,
+            )
+            file_handler.setLevel(logging.DEBUG)
+            file_formatter = logging.Formatter(
+                "%(asctime)s - %(name)s - %(levelname)s "
+                "- [%(filename)s:%(lineno)d] - %(message)s"
+            )
+            file_handler.setFormatter(file_formatter)
+            logger.addHandler(file_handler)
+        except (OSError, PermissionError):
+            # If we can't create logs directory, just use console logging
+            pass
 
         cls._logger = logger
         return logger
