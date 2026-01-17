@@ -27,7 +27,10 @@ class VerseService(BaseService):
         page: Optional[int] = None,
         per_page: Optional[int] = None,
     ):
-        params = {"language": language}
+        params = {"language": language,
+         "translation_fields" : "language_name",
+         "fields":"text_uthmani"
+         }
         if translations:
             params["translations"] = ",".join(map(str, translations))
         if words:
@@ -36,6 +39,7 @@ class VerseService(BaseService):
             params["page"] = page
         if per_page:
             params["per_page"] = per_page
+
         return self._get(f"/content/api/v4/verses/by_chapter/{chapter_id}", params)
 
     def by_juz(
@@ -45,7 +49,10 @@ class VerseService(BaseService):
         translations: Optional[List[int]] = None,
         words: bool = False,
     ):
-        params = {"language": language}
+        params = {"language": language,
+         "translation_fields" : "language_name",
+         "fields":"text_uthmani"
+         }  
         if translations:
             params["translations"] = ",".join(map(str, translations))
         if words:
