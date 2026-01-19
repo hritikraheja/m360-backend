@@ -1,4 +1,3 @@
-from typing import Optional
 from services.base_service import BaseService
 
 

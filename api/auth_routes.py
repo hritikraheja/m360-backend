@@ -20,9 +20,7 @@ logger = Logger.get_logger(__name__)
     description="Generate a new OAuth2 bearer token for API authentication. "
     "Tokens are cached and reused until expiration (1 hour) unless force_refresh is True.",
 )
-# NOTE: This endpoint generates OAuth2 tokens for authenticating with Quran Foundation API
-# This is NOT for client authentication - it's for the backend to authenticate external API calls
-# If you need client authentication (JWT/Bearer tokens for API users), add Security dependencies
+
 def generate_token(request: Optional[TokenRequest] = None) -> TokenResponse:
     try:
         config = QuranConfigFactory.create()

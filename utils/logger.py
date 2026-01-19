@@ -46,7 +46,6 @@ class Logger:
             file_handler.setFormatter(file_formatter)
             logger.addHandler(file_handler)
         except (OSError, PermissionError):
-            # If we can't create logs directory, just use console logging
             pass
 
         cls._logger = logger

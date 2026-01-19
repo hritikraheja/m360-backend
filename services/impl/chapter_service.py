@@ -3,33 +3,20 @@ from utils.auto_translator import translate_text, LANG_CODE_TO_NAME
 
 
 def localize_chapters(data, language="en"):
-    """
-    Safely adjust chapter payload to include proper translated_name.language_name
-    and act as a no-op for languages that don't need localization.
-
-    This function intentionally avoids mutating translated names because a
-    generic translation pass happens elsewhere for non-English/Arabic.
-    """
     try:
         if not isinstance(data, dict):
             return data
         lang = (language or "en").strip().lower()
-
-        # Determine readable language name for metadata
         lang_name = LANG_CODE_TO_NAME.get(lang, lang)
-
-        # Handle list payload
         chapters = data.get("chapters")
         if isinstance(chapters, list):
             for ch in chapters:
                 if isinstance(ch, dict):
                     t = ch.get("translated_name")
                     if isinstance(t, dict):
-                        # Only set language name metadata; do not alter actual name here
                         t["language_name"] = lang_name
             return data
 
-        # Handle single item payload
         ch = data.get("chapter")
         if isinstance(ch, dict):
             t = ch.get("translated_name")
@@ -37,7 +24,6 @@ def localize_chapters(data, language="en"):
                 t["language_name"] = lang_name
         return data
     except Exception:
-        # Be defensive: never break the response shaping
         return data
 
 
@@ -45,10 +31,8 @@ class ChapterService(BaseService):
 
     def get_chapters(self, language="en"):
         data = self._get("/content/api/v4/chapters", {"language": language})
-        # Apply static Hindi localization if enabled (precise mapping)
         if getattr(self.config, "use_local_chapter_translations", True):
             data = localize_chapters(data, language)
-        # Generic translation fallback for translated_name if still not in requested language
         if language and language not in ("en", "ar"):
             chapters = data.get("chapters") if isinstance(data, dict) else None
             if chapters and isinstance(chapters, list):

@@ -31,9 +31,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
 
 
 async def http_exception_handler(request: Request, exc: HTTPException):
-    # Standardize FastAPI HTTPException payloads
     status_code = exc.status_code if hasattr(exc, "status_code") else 500
-    # detail can be str or dict; normalize to str
     detail = exc.detail if hasattr(exc, "detail") else None
     message = detail if isinstance(detail, str) else (
         detail.get("message") if isinstance(detail, dict) and "message" in detail else str(detail)
