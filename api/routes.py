@@ -76,6 +76,7 @@ def get_verse_by_key(
     language: str = "en",
     translations: Optional[str] = None,
     words: bool = False,
+    audio:int = 7,
 ):
     translation_ids = list(map(int, translations.split(","))) if translations else None
     data = client.verses.by_key(
@@ -83,6 +84,7 @@ def get_verse_by_key(
         language=language,
         translations=translation_ids,
         words=words,
+        audio=audio
     )
     return success_response(data)
 
