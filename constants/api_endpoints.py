@@ -59,3 +59,4 @@ class ApiEndpoints(Enum):
     RESOURCE_CHAPTER_RECITERS = "/resources/chapter-reciters"
 
     SEARCH = "/search"
+    JUZ_RECITATION = "/list-juz-recitation/{recitation_id}/{juz_number}"

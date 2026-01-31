@@ -15,6 +15,7 @@ from services.impl.verse_service import VerseService
 
 from auth.token_singleton import get_token_provider
 
+
 class QuranApiClient:
 
     def __init__(self, config):

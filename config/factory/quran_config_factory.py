@@ -21,7 +21,7 @@ class QuranConfigFactory:
 
         if os.path.exists(".env"):
             return None, ".env"
-        
+
         return None, None
 
     @staticmethod
@@ -30,7 +30,7 @@ class QuranConfigFactory:
             load_dotenv(".env", override=False)
         env = os.getenv("APP_ENV")
         env_file = None
-        
+
         if env:
             env = env.lower()
             if env == Environment.PROD.value:
@@ -59,6 +59,7 @@ class QuranConfigFactory:
             load_dotenv(env_file, override=True)
         elif not os.path.exists(".env"):
             import warnings
+
             warnings.warn(
                 f"Environment file {env_file} not found. Using system environment variables."
             )

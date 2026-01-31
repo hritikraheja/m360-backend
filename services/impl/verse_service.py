@@ -4,7 +4,13 @@ from services.base_service import BaseService
 
 class VerseService(BaseService):
 
-    def by_key(self, verse_key: str, language: str = "en", translations: Optional[List[int]] = None, words: bool = False,):
+    def by_key(
+        self,
+        verse_key: str,
+        language: str = "en",
+        translations: Optional[List[int]] = None,
+        words: bool = False,
+    ):
         params = {"language": language}
         if translations:
             params["translations"] = ",".join(map(str, translations))
@@ -12,11 +18,20 @@ class VerseService(BaseService):
             params["words"] = "true"
         return self._get(f"/content/api/v4/verses/by_key/{verse_key}", params)
 
-    def by_chapter(self, chapter_id: int, language: str = "en", translations: Optional[List[int]] = None, words: bool = False, page: Optional[int] = None, per_page: Optional[int] = None,):
-        params = {"language": language,
-         "translation_fields" : "language_name",
-         "fields":"text_uthmani"
-         }
+    def by_chapter(
+        self,
+        chapter_id: int,
+        language: str = "en",
+        translations: Optional[List[int]] = None,
+        words: bool = False,
+        page: Optional[int] = None,
+        per_page: Optional[int] = None,
+    ):
+        params = {
+            "language": language,
+            "translation_fields": "language_name",
+            "fields": "text_uthmani",
+        }
         if translations:
             params["translations"] = ",".join(map(str, translations))
         if words:
@@ -37,10 +52,11 @@ class VerseService(BaseService):
         page: Optional[int] = None,
         per_page: Optional[int] = None,
     ):
-        params = {"language": language,
-         "translation_fields" : "language_name",
-         "fields":"text_uthmani"
-         }  
+        params = {
+            "language": language,
+            "translation_fields": "language_name",
+            "fields": "text_uthmani",
+        }
         if translations:
             params["translations"] = ",".join(map(str, translations))
         if words:

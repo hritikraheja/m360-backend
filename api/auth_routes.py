@@ -20,7 +20,6 @@ logger = Logger.get_logger(__name__)
     description="Generate a new OAuth2 bearer token for API authentication. "
     "Tokens are cached and reused until expiration (1 hour) unless force_refresh is True.",
 )
-
 def generate_token(request: Optional[TokenRequest] = None) -> TokenResponse:
     try:
         config = QuranConfigFactory.create()

@@ -39,3 +39,29 @@
 2026-01-31 20:39:14,010 - db.impl.local_cache_provider - INFO - [main.py:15] - API Starting...
 2026-01-31 20:39:39,024 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_recitations/1/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_recitations/1/1:1
 2026-01-31 20:40:17,833 - db.impl.local_cache_provider - INFO - [main.py:17] - API Shutting Down...
+2026-01-31 20:43:50,519 - db.impl.local_cache_provider - INFO - [log_device_repository.py:13] - Using in-memory storage
+2026-01-31 20:43:50,557 - db.impl.local_cache_provider - INFO - [main.py:15] - API Starting...
+2026-01-31 20:45:17,344 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/verse_media/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/verse_media/1:1
+2026-01-31 20:46:10,256 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_recitations/1/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_recitations/1/1:1
+2026-01-31 20:46:21,852 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/recitations/1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/recitations/1
+2026-01-31 20:46:34,686 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/translations/1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/translations/1
+2026-01-31 20:46:48,861 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/chapter_translations/131/1: Upstream error for https://apis.quran.foundation/content/api/v4/chapter_translations/131/1
+2026-01-31 20:47:02,524 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_translations/131/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_translations/131/1:1
+2026-01-31 20:47:24,189 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/chapter_tafsirs/169/1: Upstream error for https://apis.quran.foundation/content/api/v4/chapter_tafsirs/169/1
+2026-01-31 20:47:29,919 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_tafsirs/169/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_tafsirs/169/1:1
+2026-01-31 20:48:37,208 - db.impl.local_cache_provider - INFO - [main.py:17] - API Shutting Down...
+2026-01-31 20:51:48,163 - db.impl.local_cache_provider - INFO - [log_device_repository.py:13] - Using in-memory storage
+2026-01-31 20:51:48,202 - db.impl.local_cache_provider - INFO - [main.py:19] - API Starting...
+2026-01-31 20:52:02,005 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/verse_media/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/verse_media/1:1
+2026-01-31 20:52:32,012 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_recitations/1/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_recitations/1/1:1
+2026-01-31 20:52:43,185 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/recitations/1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/recitations/1
+2026-01-31 20:52:58,332 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/translations/1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/translations/1
+2026-01-31 20:53:04,471 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/chapter_translations/131/1: Upstream error for https://apis.quran.foundation/content/api/v4/chapter_translations/131/1
+2026-01-31 20:53:09,404 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_translations/131/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_translations/131/1:1
+2026-01-31 20:53:21,682 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/chapter_tafsirs/169/1: Upstream error for https://apis.quran.foundation/content/api/v4/chapter_tafsirs/169/1
+2026-01-31 20:53:26,227 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/verse_tafsirs/169/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/verse_tafsirs/169/1:1
+2026-01-31 20:53:36,814 - db.impl.local_cache_provider - INFO - [main.py:21] - API Shutting Down...
+2026-01-31 20:56:14,903 - db.impl.local_cache_provider - INFO - [log_device_repository.py:13] - Using in-memory storage
+2026-01-31 20:56:14,942 - db.impl.local_cache_provider - INFO - [main.py:19] - API Starting...
+2026-01-31 20:56:24,970 - db.impl.local_cache_provider - ERROR - [base_service.py:46] - Error fetching /content/api/v4/resources/verse_media/1:1: Upstream error for https://apis.quran.foundation/content/api/v4/resources/verse_media/1:1
+2026-01-31 20:56:36,952 - db.impl.local_cache_provider - INFO - [main.py:21] - API Shutting Down...

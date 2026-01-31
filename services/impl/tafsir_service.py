@@ -11,9 +11,7 @@ class TafsirService(BaseService):
     def get_tafsir(self, tafsir_id: int):
         return self._get(f"/content/api/v4/resources/tafsirs/{tafsir_id}")
 
-    def get_chapter_tafsir(
-        self, chapter_id: int, tafsir_id: int, language: str = "en"
-    ):
+    def get_chapter_tafsir(self, chapter_id: int, tafsir_id: int, language: str = "en"):
         params = {"language": language}
         return self._get(
             f"/content/api/v4/chapter_tafsirs/{tafsir_id}/{chapter_id}", params

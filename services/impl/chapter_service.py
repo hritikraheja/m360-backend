@@ -1,5 +1,6 @@
 from services.base_service import BaseService
 
+
 class ChapterService(BaseService):
 
     def get_chapters(self, language="en"):

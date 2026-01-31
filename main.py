@@ -5,7 +5,11 @@ from utils.logger import Logger
 from api.routes import router
 from api.auth_routes import auth_router
 from exceptions.api_exception import ApiException
-from exceptions.impl.api_exception_handler import api_exception_handler, generic_exception_handler, http_exception_handler
+from exceptions.impl.api_exception_handler import (
+    api_exception_handler,
+    generic_exception_handler,
+    http_exception_handler,
+)
 
 logger = Logger.get_logger(__name__)
 

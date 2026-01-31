@@ -16,7 +16,8 @@ class TranslationService(BaseService):
     ):
         params = {"language": language}
         return self._get(
-            f"/content/api/v4/chapter_translations/{translation_id}/{chapter_id}", params
+            f"/content/api/v4/chapter_translations/{translation_id}/{chapter_id}",
+            params,
         )
 
     def get_verse_translation(
